@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+        body {
+            background: linear-gradient(to right, #1d2b64, #f8cdda);
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .dashboard-container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .dashboard-header {
+            font-size: 2.5em;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #f8cdda;
+        }
+
+        .dashboard-links {
+            margin-top: 40px;
+        }
+
+        .dashboard-links a {
+            display: block;
+            background: #ff6b6b;
+            padding: 15px;
+            margin: 20px 0;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+
+        .dashboard-links a:hover {
+            background: #ff4757;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1 class="dashboard-header">Welcome to the Voting Application</h1>
+
+        <div class="dashboard-links">
+            <a href="/saveAdmin">Admin Dashboard</a>
+            <a href="/saveVoter">Voter Dashboard</a>
+        </div>
+    </div>
+</body>
+</html>

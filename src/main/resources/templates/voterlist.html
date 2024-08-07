@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Voter List</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(to right, #1d2b64, #f8cdda);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        h3 a {
+            color: #f8cdda;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        h3 a:hover {
+            color: #fff;
+        }
+
+        .table {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .table thead {
+            background: #007bff;
+        }
+
+        .table thead th {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .table tbody tr {
+            transition: background 0.3s ease;
+        }
+
+        .table tbody tr:hover {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .table tbody td {
+            color: #ddd;
+            vertical-align: middle;
+        }
+
+        .btn-danger {
+            background-color: #ff4757;
+            border: none;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-danger:hover {
+            background-color: #e84118;
+            box-shadow: 0 0 10px #e84118, 0 0 15px #e84118;
+        }
+
+        .action-button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 6px 12px;
+            font-size: 1em;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .action-button:hover {
+            background-color: #218838;
+            color: #fff;
+            box-shadow: 0 0 10px #218838, 0 0 15px #218838;
+        }
+
+        .action-button:focus {
+            outline: none;
+            box-shadow: 0 0 5px #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <center><h3><a href="/welcome">Back to Dashboard</a></h3></center>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Voter Name</th>
+                    <th scope="col">Date Of Birth</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="voter : ${voterList}">
+                    <td th:text="${voter.id}"></td>
+                    <td th:text="${voter.voterName}"></td>
+                    <td th:text="${voter.DOB}"></td>
+                    <td th:text="${voter.gender}"></td>
+                    <td th:text="${voter.username}"></td>
+                    <td>
+                        <a th:href="@{/deleteVoter/{id}(id=${voter.id})}" class="btn btn-danger">DELETE</a>
+                        <a th:href="@{'/editVoter/' + ${voter.id}}">
+                            <button class="action-button">Edit</button>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</body>
+</html>

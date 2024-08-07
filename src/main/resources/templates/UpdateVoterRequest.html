@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Voter</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Roboto', sans-serif;
+            background: #f0f2f5;
+            color: #333;
+        }
+
+        .main {
+            width: 400px;
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: 0.3s ease;
+        }
+
+        .main:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        h3 {
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        label {
+            color: #555;
+            font-size: 1em;
+            display: flex;
+            margin: 10px 0;
+            font-weight: 500;
+            cursor: pointer;
+            transition: .5s ease-in-out;
+        }
+
+        input {
+            width: 100%;
+            background: #f8f9fa;
+            color: #333;
+            display: flex;
+            margin: 10px 0;
+            padding: 12px;
+            border: 1px solid #ced4da;
+            outline: none;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: 0.3s ease;
+        }
+
+        input::placeholder {
+            color: #6c757d;
+        }
+
+        input:focus {
+            background: #ffffff;
+            border-color: #80bdff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+        }
+
+        button {
+            width: 100%;
+            margin: 20px 0;
+            color: #fff;
+            background: #007bff;
+            font-size: 1em;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            padding: 12px;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+            box-shadow: 0 0 10px rgba(0, 86, 179, 0.5);
+        }
+
+        .login-option {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .login-option a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .login-option a:hover {
+            color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .main {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="login">
+            <form action="/findVoterForUpdate" method="post">
+                <h3>Update Voter</h3>
+                <input type="text" name="username" placeholder="Username" required="">
+                <input type="password" name="password" placeholder="Password" required="">
+                <a href="/VoterDashboard" class="btn btn-secondary btn-block mt-3">Back to Dashboard</a>
+                <button type="submit">Find Voter</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

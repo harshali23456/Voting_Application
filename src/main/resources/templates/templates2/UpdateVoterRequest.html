@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Modal</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Roboto', sans-serif;
+            background: #000;
+            color: #fff;
+        }
+
+        .main {
+            width: 400px;
+            background: #1e1e1e;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transition: 0.3s ease;
+        }
+
+        .main:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+        }
+
+        h3 {
+            color: #fff;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        label {
+            color: #bbb;
+            font-size: 1.2em;
+            justify-content: center;
+            display: flex;
+            margin: 10px 0;
+            font-weight: 500;
+            cursor: pointer;
+            transition: .5s ease-in-out;
+        }
+
+        input {
+            width: 100%;
+            background: #333;
+            color: #fff;
+            justify-content: center;
+            display: flex;
+            margin: 10px 0;
+            padding: 12px;
+            border: 1px solid #444;
+            outline: none;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: 0.3s ease;
+        }
+
+        input::placeholder {
+            color: #888;
+        }
+
+        input:focus {
+            background: #444;
+            border-color: #666;
+        }
+
+        button {
+            width: 100%;
+            margin: 20px 0;
+            justify-content: center;
+            display: block;
+            color: #fff;
+            background: #555;
+            font-size: 1em;
+            font-weight: bold;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            padding: 12px;
+            transition: .2s ease-in;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #777;
+        }
+
+        .login-option {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .login-option a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .login-option a:hover {
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .main {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+ <div class="main">
+        <div class="login">
+            <form action="/findVoterForUpdate" method="post">
+                <h3>Update Voter</h3>
+                <input type="text" name="username" placeholder="Username" required="">
+                <input type="password" name="password" placeholder="Password" required="">
+                <a href="/VoterDashboard">Back to Dashboard</button></a>
+                <button type="submit">Find Voter</button>
+                <div class="login-option">                  
+                </div>
+            </form>   
+</body>
+</html>-->
